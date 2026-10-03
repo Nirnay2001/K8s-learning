@@ -12,4 +12,4 @@ spec:
   volumes:
     - name: storage-demo-volume
       persistentVolumeClaim:
-        claimName: mongo-db-pvc
+        claimName: Database-pvc
