@@ -3,5 +3,5 @@ kind: StorageClass
 metadata:
   name: my-storage-class
 provisioner: k8s.io/minikube-hostpath
-reclaimPolicy: Delete
+reclaimPolicy: Retain
 volumeBindingMode: Immediate
