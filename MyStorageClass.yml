@@ -3,5 +3,6 @@ kind: StorageClass
 metadata:
   name: my-storage-class
 provisioner: k8s.io/minikube-hostpath
+allowVolumeExpansion: true
 reclaimPolicy: Retain
 volumeBindingMode: Immediate
