@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: snapshot-pod
+spec:
+  containers:
+    - name: snapshot-pod
+      image: nginx
+      volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: snapshot-pod-volume
+  volumes:
+    - name: snapshot-pod-volume
+      persistentVolumeClaim:
+        claimName: database-pvc-snapshot
