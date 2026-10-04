@@ -5,6 +5,9 @@ metadata:
 spec:
   serviceName: "nginx-headless"
   replicas: 3
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Delete
   selector:
     matchLabels:
       app: nginx-statefulset
