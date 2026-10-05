@@ -22,4 +22,5 @@ spec:
               readOnly: true
       volumes:
         - name: nginx-log
-          hostPath: /var/log
+          hostPath:
+            path: /var/log
