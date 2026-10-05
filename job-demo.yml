@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-sleep-demo
+spec:
+  completions: 2
+  template:
+    metadata:
+      lebels:
+        app.kubernetes.io/name: job-sleep-demo
+    spec:
+      containers:
+        - name: job-sleep-demo
+          image: busybox
+          arg:
+            - sleep 
+            - "10"
