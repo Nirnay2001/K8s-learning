@@ -6,7 +6,7 @@ spec:
   completions: 2
   template:
     metadata:
-      lebels:
+      labels:
         app.kubernetes.io/name: job-sleep-demo
     spec:
       containers:
