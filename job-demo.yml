@@ -1,18 +1,18 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: job-sleep-demo
+  name: job-sleep-demo2
 spec:
   completions: 5
   parallelism: 2
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: job-sleep-demo
+        app.kubernetes.io/name: job-sleep-demo2
     spec:
       restartPolicy: Never
       containers:
-        - name: job-sleep-demo
+        - name: job-sleep-demo2
           image: busybox
           args:
             - sleep 
