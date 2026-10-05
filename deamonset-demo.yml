@@ -8,6 +8,11 @@ spec:
   selector:
     matchLabels:
       name: fluentd
+  
+  template:
+    metadata:
+      labels:
+        name: fluentd
     
     spec:
       containers:
