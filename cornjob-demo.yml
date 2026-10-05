@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: cornjob
+metadata:
+  name: cornjob-demo
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: cornjob-demo
+              image: busybox
+              args:
+                - sleep
+                - "10"
+          restartPolicy: Never
