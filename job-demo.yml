@@ -9,6 +9,7 @@ spec:
       labels:
         app.kubernetes.io/name: job-sleep-demo
     spec:
+      restartPolicy: Never
       containers:
         - name: job-sleep-demo
           image: busybox
