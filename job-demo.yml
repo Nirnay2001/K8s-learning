@@ -12,6 +12,6 @@ spec:
       containers:
         - name: job-sleep-demo
           image: busybox
-          arg:
+          args:
             - sleep 
             - "10"
