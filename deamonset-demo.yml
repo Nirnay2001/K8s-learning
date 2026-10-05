@@ -1,26 +1,31 @@
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: nginx-daemonset
+  name: deamonset-demo
+  labels:
+    app: fluentd
 spec:
   selector:
     matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
+      name: fluentd
+    
     spec:
       containers:
-        - name: nginx
-          image: nginx
-          ports:
-            - containerPort: 80
+        - name: fluentd
+          image: fluent/fluentd:v1.16-1
+          resources:
+            limits:
+              memory: 200Mi
+              cpu: 1000m
+            requests:
+              memory: 200Mi
+              cpu: 1000m
           volumeMounts:
-            - name: nginx-log
-              mountPath: /host-log
-              readOnly: true
+            - name: varlog
+              mountPath: /var/log
+              
+      
       volumes:
-        - name: nginx-log
+        - name: varlog
           hostPath:
             path: /var/log
