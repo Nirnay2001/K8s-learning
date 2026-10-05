@@ -1,5 +1,5 @@
 apiVersion: batch/v1
-kind: cornjob
+kind: cornjobs
 metadata:
   name: cornjob-demo
 spec:
