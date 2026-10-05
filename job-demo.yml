@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: job-sleep-demo
 spec:
-  completions: 2
+  completions: 5
   parallelism: 2
   template:
     metadata:
