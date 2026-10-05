@@ -4,6 +4,7 @@ metadata:
   name: job-sleep-demo
 spec:
   completions: 2
+  parallelism: 2
   template:
     metadata:
       labels:
