@@ -6,18 +6,16 @@ spec:
   podSelector:
     matchLabels:
       app: db
-    policyTypes:
-      - Ingress
-      - Egress
-    ingress:
-      - from:
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
         - podSelector:
             matchLabels:
               app: frontend
         - namespaceSelector:
             matchLabels:
-              name: dev
-        ports:
-          - protocol: TCP
-            port: 8080
-    
+              kubernetes.io/metadata.name: dev
+      ports:
+        - protocol: TCP
+          port: 8080
